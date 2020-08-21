@@ -1,0 +1,18 @@
+#notFound-body {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: rgba(20, 20, 20, 0.9);
+}
+
+#notFound-body h1 {
+  height: 10%;
+  color: white;
+}
+
+iframe {
+  width: 60%;
+  height: 80%;
+}

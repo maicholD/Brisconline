@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Brisconline</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/main.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/login.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/home.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/lobby.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/game.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/profile.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/404.css">
+
+</head>
+
+<body>
+	<div id="briscol-app" class="container-fluid">
+		<router-view></router-view>
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script src="https://npmcdn.com/vue-router/dist/vue-router.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js" integrity="sha512-nOQuvD9nKirvxDdvQ9OMqe2dgapbPB7vYAMrzJihw5m+aNcf0dX53m6YxM4LgA9u8e9eg9QX+/+mPu8kCNpV2A==" crossorigin="anonymous"></script>
+
+	<script src="/static/js/header.js"></script>
+	<script src="/static/js/roomList.js"></script>
+	<script src="/static/js/modalGameEnd.js"></script>
+	<script src="/static/js/modalGameConfig.js"></script>
+	<script src="/static/js/customize.js"></script>
+	<script src="/static/js/chat.js"></script>
+	<script src="/static/js/globalLead.js"></script>
+	<script src="/static/js/userCard.js"></script>
+	<script src="/static/js/home.js"></script>
+	<script src="/static/js/login.js"></script>
+	<script src="/static/js/registration.js"></script>
+	<script src="/static/js/lobby.js"></script>
+	<script src="/static/js/game.js"></script>
+	<script src="/static/js/profile.js"></script>
+	<script src="/static/js/404.js"></script>
+	<script src="/static/js/router.js"></script>
+
+
+	<script>
+		var app = new Vue({
+			router,
+			el: "#briscol-app"
+		});
+	</script>
+
+</body>
+
+</html>

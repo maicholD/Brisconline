@@ -1,0 +1,382 @@
+#btnAdd {
+  background-color: red;
+  height: 10%;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  border-color: red;
+  /* align-self: center */
+}
+
+#home-body {
+  display: flex;
+  align-items: flex-start;
+  min-height: 100vh;
+  flex-wrap: wrap;
+  background-color: rgba(20, 20, 20, 0.9);
+}
+
+#home-header {
+  display: flex;
+  min-width: 100%;
+  height: 50px;
+  margin: 0px;
+  padding: 0px;
+  background-color: black;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#home-header>img {
+  height: 80%;
+  width: auto;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.homeContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: calc(100vh - 50px);
+  margin: 0px;
+  padding: 0px;
+}
+
+#side-column {
+  min-width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-between;
+  max-height: 100vh;
+}
+
+#main-column {
+  min-width: 58%;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  max-height: 100vh;
+  margin-left: 1%;
+  margin-bottom: 1%;
+  margin-top: 1%;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  float: right;
+  overflow: scroll;
+  color: rgba(240, 240, 240, 0.8);
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: rgba(20, 20, 20, 0.5);
+}
+
+.rowInfo:hover {
+  background-color: rgba(240, 240, 240, 0.6);
+  color: black;
+}
+
+.modal-mask {
+  position: fixed;
+  z-index: 9998;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: table;
+  transition: opacity 0.3s ease;
+}
+
+.modal-wrapper {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.modal-container {
+  width: 300px;
+  margin: 0px auto;
+  padding: 20px 30px;
+  border-radius: 2px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
+  transition: all 0.3s ease;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.modal-header h3 {
+  margin-top: 0;
+  color: #42b983;
+}
+
+.modal-body {
+  margin: 20px 0;
+}
+
+.modal-default-button {
+  float: right;
+}
+
+.modal-enter {
+  opacity: 0;
+}
+
+.modal-leave-active {
+  opacity: 0;
+}
+
+.modal-enter .modal-container,
+.modal-leave-active .modal-container {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.msgContainer {
+  border: 2px solid #dedede;
+  background-color: #f1f1f1;
+  border-radius: 30px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.darker {
+  border-color: #ccc;
+  background-color: #ddd;
+}
+
+.msgContainer::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.msgContainer h1 {
+  font-size: revert;
+}
+
+.msgContainer img {
+  float: left;
+  max-width: 40px;
+  width: 100%;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+.msgContainer img.right {
+  float: right;
+  margin-left: 20px;
+  margin-right: 0;
+}
+
+.time-right {
+  float: right;
+  color: #aaa;
+}
+
+.time-left {
+  float: left;
+  color: #999;
+}
+
+#lead-info {
+  width: min-content;
+}
+
+.singleLeadContainer p {
+  color: white;
+  background: rgba(120, 120, 120, 0.5);
+  width: min-content;
+  margin-bottom: 10%;
+  height: min-content;
+  border-radius: 5px;
+}
+
+.singleLeadContainer {
+  border: 2px solid #dedede;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+  width: 85%;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: flex-start;
+}
+
+.darker {
+  border-color: #ccc;
+  background-color: #ddd;
+}
+
+.singleLeadContainer::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.singleLeadContainer img {
+  float: left;
+  max-width: 60px;
+  width: 100%;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+.singleLeadContainer img.right {
+  float: right;
+  margin-left: 20px;
+  margin-right: 0;
+}
+
+.globalLeadContainer {
+  margin-top: 4%;
+  width: 80%;
+  min-height: 35%;
+  max-height: 40%;
+  background-color: rgba(150, 150, 150, 0.5);
+  overflow: auto;
+  align-self: center;
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 10px;
+}
+
+#room-list {
+  width: 100%;
+}
+
+#room-list-div {
+  /*position: fixed;
+  margin-top: 6%;*/
+  overflow: auto;
+  max-height: 90%;
+  border: black;
+  border-style: solid;
+  border-radius: 8px;
+}
+
+.Chat::-webkit-scrollbar {
+  border-radius: 5px;
+}
+
+#chat-box-home {
+  min-height: 25%;
+  max-height: 40%;
+  align-self: center;
+  width: 80%;
+  background-color: rgba(150, 150, 150, 0.5);
+  border-radius: 10px;
+  margin-bottom: 2%;
+}
+
+#chat-box-home>div {
+  height: 100%;
+}
+
+.Chat {
+  width: 100%;
+  /*min-height: 25%;
+  max-height: 40%;*/
+  align-self: center;
+  overflow: auto;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+}
+
+.chatMessage {
+  width: 70%;
+}
+
+.myChatMessage {
+  align-self: flex-end;
+}
+
+.globalC>* {
+  width: 100%;
+}
+
+.textarea-container {
+  height: 20%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+aside {
+  background-color:
+    rgb(255, 255, 255, 1);
+  position: fixed;
+  height: calc(100% - 50px);
+  width: 25%;
+  z-index: 20;
+  color:
+    black;
+  font-family: verdana;
+  font-size: 16px;
+  visibility: hidden;
+  margin-top: 50px;
+  left: calc(100% - 25%);
+}
+
+aside>div {
+  margin-top: 5px;
+  margin-left: 5px;
+  border-bottom: black;
+  border-bottom-style: solid;
+  height: auto;
+}
+
+@media only screen and (max-width: 750px) {
+  #side-column {
+    visibility: hidden;
+    min-width: 0px;
+    width: 0px;
+  }
+
+  #main-column {
+    width: 100%;
+  }
+}
+
+.textarea-container {
+  position: relative;
+  resize: none;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.textarea-container input {
+  width: 75%;
+  max-height: 40px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  border-style: hidden;
+}
+
+.textarea-container button {
+  width: 20%;
+  max-height: 40px;
+  border-radius: 8px;
+  border-color: red;
+  background-color: red;
+  color: white;
+  font-weight: bold;
+}
+
+#home-body #form-title {
+  width: 100%
+}

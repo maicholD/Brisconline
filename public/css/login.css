@@ -1,0 +1,89 @@
+.auth-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 100%;
+  min-height: 100%;
+  background-color: green;
+  margin: 0px;
+  padding: 0px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.6)), url('../img/sfondoLogin.png');
+  background-repeat: no-repeat;
+  /*background-attachment: fixed;*/
+  background-size: cover;
+}
+
+div.container-form {
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.8);
+  ;
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+  max-width: max-content;
+  padding: 20px;
+  color: white;
+  font-family: verdana;
+  font-size: 16px;
+}
+
+.authButton {
+  width: 70%;
+  background-color: red;
+  margin: 20px;
+  height: 40px;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  border-color: red;
+}
+
+.login-fieldset {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-self: center;
+}
+
+.login-fieldset>input {
+  margin: 15px;
+  background-color: rgb(64, 64, 64);
+  height: 40px;
+  border-radius: 5px;
+  border-color: rgb(64, 64, 64);
+  color: white;
+}
+
+@media only screen and (max-width: 600px) {
+  .auth-body {
+    align-content: stretch;
+  }
+
+  div.container-form {
+    border-radius: 0px;
+    background-color: rgba(0, 0, 0, 0.9);
+    ;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    min-width: 100%;
+    min-height: 100vh;
+  }
+}
+
+.auth-body form {
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  min-width: 20%;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+.auth-body a {
+  color: blue;
+}

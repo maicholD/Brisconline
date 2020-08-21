@@ -1,0 +1,113 @@
+html, body {
+  overflow: auto;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#briscol-app {
+  width: 100vw;
+  height: 100vh;
+  padding: 0px;
+}
+
+router-view {
+  width: 100vw;
+  height: 100vh;
+}
+
+div.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+  width: 100%;
+  color: black;
+  font-family: verdana;
+  font-size: 11px;
+}
+
+.errorMessage {
+  color: red;
+}
+
+.modal-wrapper {
+  height: 70vh;
+}
+
+.modal-container {
+  overflow: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  height: 70vh;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 8px;
+}
+
+/*#home-body .modal-container * {
+  width: 100%;
+}*/
+.modal-body {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#home-body .modal-body label {
+  width: 90%;
+  margin-bottom: 0px;
+}
+
+.modal-body input {
+  width: 5%;
+  margin-right: 2%;
+}
+
+.modal-body #pwd {
+  margin: 15px;
+  background-color: rgb(64, 64, 64);
+  height: 40px;
+  border-radius: 5px;
+  border-color: rgb(64, 64, 64);
+  color: white;
+}
+
+.modal-footer button {
+  border-radius: 8px;
+  border-color: red;
+  background-color: red;
+  color: white;
+  font-weight: bold;
+}
+
+#form-title {
+  width: 100%;
+}
+
+#pwd {
+  width: 90%;
+}
+
+.userCardBackground label, p {
+  padding: 2%;
+}
+
+#ia-div {
+  margin-top: 3vh;
+  margin-bottom: 3vh;
+}
+
+fieldset {
+  border-style: none;
+}

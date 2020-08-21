@@ -1,0 +1,204 @@
+#lobby-body {
+  display: flex;
+  align-items: flex-start;
+  height: 100vh;
+  flex-wrap: wrap;
+  background-color: rgba(20, 20, 20, 0.9);
+}
+
+/*
+.userCardImg{
+  float: left;
+  max-width: 60px;
+  width: 100%;
+  margin-right: 20px;
+  border-radius: 50%;
+}*/
+.userCard {
+  border: 2px solid #dedede;
+  /*background-color: #f1f1f1;*/
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+  width: 90%;
+  display: flex;
+}
+
+.userCardBackground {
+  background-size: contain;
+  background: round;
+}
+
+.userCard::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.container-users {
+  width: 35%;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: flex-start;
+}
+
+.container-users .leaveButton {
+  margin: 4%;
+  width: 60px;
+  height: 60px;
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  border-color: red;
+}
+
+.container-users #roomInfoDiv {
+  width: 70%;
+  margin: 4%;
+}
+
+#roomInfoDiv p {
+  color: white;
+}
+
+/*.container-users>div {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}*/
+.container-skin {
+  width: 65%;
+  height: 100%;
+}
+
+#UserBackground, #Table, #RetroCard, #Icon {
+  flex-wrap: wrap;
+}
+
+.imgCustomizeContainer {
+  width: 28%;
+  margin: 2%;
+}
+
+.imgCustomizeContainer img {
+  width: 100%;
+  height: 200px;
+}
+
+#myTabContent {
+  overflow: auto;
+  height: 86%;
+}
+
+.nav {
+  height: 10%;
+  min-height: 43px;
+}
+
+#custom {
+  height: 100%;
+}
+
+.containerCustomize {
+  height: 100%;
+}
+
+.active-class-img button img {
+  border: 3px solid blue
+}
+
+.inactive-class-img {
+  border: 0px solid
+}
+
+.container-users .userCardImg {
+  width: 20%;
+}
+
+.container-users .userCardImg img {
+  width: 100%;
+  height: auto;
+}
+
+.startGamebtn {
+  background-color:
+    red;
+  color:
+    white;
+  border-color:
+    red;
+  border-radius: 8px;
+  width: 90%;
+}
+
+@media only screen and (max-width: 925px) {
+  #UserBackground, #Table, #RetroCard, #Icon {
+    justify-content: space-around;
+  }
+}
+
+#UserBackground * {
+  width: 270px;
+  height: 160px;
+}
+
+#Table * {
+  width: 270px;
+  height: 200px;
+}
+
+#RetroCard * {
+  width: 150px;
+  height: 250px;
+}
+
+#Icon * {
+  width: 100px;
+  height: 100px;
+}
+
+.imgCustomizeContainer * {
+  margin: 0px;
+  padding: 0px;
+}
+
+#lobby-body .userCard {
+  height: 110px;
+}
+
+#lobby-body .nav-link {
+  color: white;
+  font-weight: bold;
+}
+
+#lobby-body .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+  color: #495057;
+  background-color: red;
+  border-color: #dee2e6 #dee2e6 #fff;
+}
+
+.imgCustomize {
+  position: relative;
+}
+
+.imgCustomize .after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  color: #FFF;
+  text-align: center;
+  padding-top: 10%;
+}
+
+.imgCustomize:hover .after {
+  display: block;
+  background: rgba(0, 0, 0, .6);
+}
