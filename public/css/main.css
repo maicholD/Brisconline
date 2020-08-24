@@ -65,7 +65,6 @@ div.container {
 }
 
 #home-body .modal-body label {
-  width: 90%;
   margin-bottom: 0px;
 }
 
@@ -91,8 +90,12 @@ div.container {
   font-weight: bold;
 }
 
-#form-title {
+.form-title {
   width: 100%;
+}
+
+.form-element {
+  width: 90%;
 }
 
 #pwd {
@@ -104,6 +107,8 @@ div.container {
 }
 
 #ia-div {
+  display: flex;
+  flex-wrap: wrap;
   margin-top: 3vh;
   margin-bottom: 3vh;
 }

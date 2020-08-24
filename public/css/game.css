@@ -179,7 +179,7 @@
 }
 
 .userCardUsername, .userCardLevel, .userCardMail, .userCardPoints, .userCardWin, .userCardLose, .userCardPlayed {
-  font-size: 3vh;
+  font-size: 2.5vh;
   color:
     white;
   background:

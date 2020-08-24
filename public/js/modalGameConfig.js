@@ -55,22 +55,25 @@ const ModalGameConfig = {
 
 	              <div v-if="roomCreate"class="modal-body">
 	                 <slot name="body">
-											<label for="playerNumb" id="form-title">Seleziona il numero di giocatori</label>
+											<label for="playerNumb" class="form-title">Seleziona il numero di giocatori</label>
 
                       <input type="radio" id="2" name="2" value="2"  v-model="playerCount">
-                      <label for="2"> 1vs1 </label>
+                      <label for="2" class="form-element"> 1vs1 </label>
 
                       <input type="radio" id="4" name="4" value="4"  v-model="playerCount" disabled>
-                      <label for="4"> 2vs2 (coming soon)</label>
+                      <label for="4" class="form-element"> 2vs2 (coming soon)</label>
 
                       <input type="radio" id="ia" name="ia" value="1" v-model="playerCount">
-                      <label for="ia"> vsIA </label>
+                      <label for="ia" class="form-element"> vsIA </label>
                       <form>
                         <div id="ia-div" v-if="playerCount=='1'" >
-                          <label>Seleziona la difficoltà</label>
-                          <input type="radio" name="facile" value="facile"  v-model="iaDifficult">facile<br>
-                          <input type="radio" name="difficile" value="difficile"  v-model="iaDifficult">difficile<br>
-                          <input type="radio" name="god" value="god" v-model="iaDifficult">Difficile e anche stronzo<br>
+                          <label class="form-title" >Seleziona la difficoltà</label>
+                          <input type="radio" name="facile" value="facile"  v-model="iaDifficult">
+                          <label for="facile" class="form-element"> Facile </label>
+                          <input type="radio" name="difficile" value="difficile"  v-model="iaDifficult">
+                          <label for="difficile" class="form-element"> Difficile </label>
+                          <input type="radio" name="god" value="god" v-model="iaDifficult">
+                          <label for="god" class="form-element"> God </label>
                         </div>
                       </form>
 										  <label for="pwd">Password:</label><br>
