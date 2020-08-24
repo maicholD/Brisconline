@@ -36,7 +36,7 @@ const ModalGameEnd = {
         elem.width = this.expPercentage + '%';*/
       })
       console.log(pointsGained.points)
-      if (pointsGained.points > 10)
+      if (pointsGained.points > 60)
         this.gameWon = "Hai Vinto!"
   },
   template: `
