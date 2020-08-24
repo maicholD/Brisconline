@@ -7,10 +7,10 @@ exports.initGame = function(req, res) {
 
   //creo il deck
   var deck = []
-  //var deckSeed = ['b', 'c', 's', 'd']
-  var deckSeed = ['b']
+  var deckSeed = ['b', 'c', 's', 'd']
+  //var deckSeed = ['b']
   var i;
-  for (i = 3; i < 11; i++)
+  for (i = 1; i < 11; i++)
     for (const seed of deckSeed)
       deck.push(cards = {value: i,seed: seed})
 
