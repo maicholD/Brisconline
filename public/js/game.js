@@ -28,7 +28,8 @@ const Game = {
       cardSelected: {value: 'null',seed: 'null'},
       cardPlayer2: {value: 'null',seed: 'null'},
       myTurn: false,
-      doLoop: true
+      doLoop: true,
+      deckSize:40
     }
   },
   methods: {
@@ -51,7 +52,7 @@ const Game = {
                          axios.post("/api/game/EndTurn",null,{params:{username:response.data.player,roomId: this.roomId,retro:this.retroCard}})
                          .then(result => {})
                      })
-                   },2000)
+                   },500)
             }},1000)
         })}},2000)
 
@@ -164,6 +165,7 @@ const Game = {
          this.cards_in_hand = result.data});
          axios.get("/api/game/getCardPlayed/" + this.roomId).then(response => {
 
+          this.deckSize = response.data.deckLength
         if(response.data.deckLength == 0)
         {
             this.briscola = 'null'
@@ -279,6 +281,7 @@ const Game = {
         </div>
 
         <div id="deck-div">
+          <p v-if="this.deckSize > 0 " class ="deckSize"> {{this.deckSize}}/40</p>
           <img v-if="deckVisible" class="deck" :src="this.retroCard"></img>
           <img v-if="briscola != 'null'" class="briscola" :src=" '/img/cards/'+ this.briscola.value + this.briscola.seed + '.png' "></img>
           <img v-if="cardSelected.value != 'null'" class="giocata1" :src=" '/img/cards/'+ this.cardSelected.value + this.cardSelected.seed + '.png' "></img>
@@ -304,7 +307,7 @@ const Game = {
           <button :disabled="cardSelected.value!='null' || myTurn==false || this.cards_in_hand[2].value=='retro' " class="card3btn" v-on:click="play(3)">
           <img class="card3img" :src=" this.cards_in_hand[2].value != 'retro' ? '/img/cards/'+ this.cards_in_hand[2].value + this.cards_in_hand[2].seed + '.png'  : this.retroCard"></button>
         </div>
-          <p class ="timer"> Timer. {{19-this.timer}}</p>
+          <p v-if="this.timer > 0"  class ="timer"> Timer. {{19-this.timer}}</p>
         <chat class="chatGame"  v-if="(this.players.length==2)" v-bind:roomId="this.roomId" v-bind:icon="this.players[this.players.findIndex(p=> p.user_name == this.username)].user_img" v-bind:username ="this.username" v-bind:isGlobal="false" ></chat>
     </div>
   </div>

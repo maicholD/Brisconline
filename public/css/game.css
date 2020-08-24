@@ -6,9 +6,12 @@
 }
 .timer{
   background-color: white;
-  height: auto;
+  height: 20px;
 }
-
+.deckSize{
+  background-color: white;
+  height: 20px;
+}
 .game-table {
   display: flex;
   flex-wrap: wrap;
