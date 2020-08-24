@@ -4,6 +4,10 @@
   min-height: 100vh;
   flex-wrap: wrap;
 }
+.timer{
+  background-color: white;
+  height: auto;
+}
 
 .game-table {
   display: flex;

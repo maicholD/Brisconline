@@ -3,6 +3,10 @@ const Game = {
   props: ['players','ia'],
   data() {
     return {
+      t2 :'',
+      tmpCnt : 0,
+      timerCount:'',
+      timer :0,
       retroCard:'',
       table :'',
       played:false,
@@ -28,32 +32,6 @@ const Game = {
     }
   },
   methods: {
-    timeoutPlayer(){
-      var tmpCnt = 0
-      var t = setInterval(() => {
-      var selectedIndex = -1
-
-      if(this.myTurn)
-      {
-        if(this.played)
-        {
-          if(this.gameEnded)
-            clearInterval(t)
-          tmpCnt=0
-        }
-        else {
-          if(tmpCnt++>7)
-          //lancio timeout
-          {
-            tmpCnt=0
-            selectedIndex = this.cards_in_hand.findIndex(card=> card.value != 'retro')
-            this.play(selectedIndex+1)
-            if(selectedIndex == -1)
-              clearInterval(t)
-          }
-      }
-    }},2500)},
-
     playIa(){
         var t = setInterval(() => {
         //se non e' il mio turno, faccio tirare una carta all'ia
@@ -81,7 +59,6 @@ const Game = {
             clearInterval(t)
           }
     },
-
     initIa(iaInfo){
       axios.post("/api/game/addIa",null,{params:{ia:iaInfo,roomId: this.roomId}}).
         then(result=>{
@@ -327,11 +304,48 @@ const Game = {
           <button :disabled="cardSelected.value!='null' || myTurn==false || this.cards_in_hand[2].value=='retro' " class="card3btn" v-on:click="play(3)">
           <img class="card3img" :src=" this.cards_in_hand[2].value != 'retro' ? '/img/cards/'+ this.cards_in_hand[2].value + this.cards_in_hand[2].seed + '.png'  : this.retroCard"></button>
         </div>
-
+          <p class ="timer"> Timer. {{10-this.timer}}</p>
         <chat class="chatGame"  v-if="(this.players.length==2)" v-bind:roomId="this.roomId" v-bind:icon="this.players[this.players.findIndex(p=> p.user_name == this.username)].user_img" v-bind:username ="this.username" v-bind:isGlobal="false" ></chat>
     </div>
   </div>
     `,
+     watch: {
+       'timer': function(){console.log("TIMER:"+this.timer)},
+       'played': function(){
+         if(this.played)
+         {
+           if(this.gameEnded)
+             clearInterval(t2)
+           this.timer = 0
+           clearInterval(timerCount)
+           tmpCnt=0
+         }
+       },
+       'myTurn': function(){
+         if(this.myTurn)
+         {
+           var t2 = setInterval(()=>{
+             if(!this.played) {
+               if(this.timer >= 10)
+               //lancio timeout
+               {
+                 clearInterval(timerCount)
+                 tmpCnt=0
+                 this.timeoutTimer =0
+                 selectedIndex = this.cards_in_hand.findIndex(card=> card.value != 'retro')
+                 this.play(selectedIndex+1)
+                 if(selectedIndex == -1)
+                   clearInterval(t2)
+               }
+             }
+           },1000)
+           if(this.timer == 0)
+           {
+               timerCount = setInterval(() => {this.timer += 1},1000)
+           }
+         }
+       }
+   },
   mounted() {
 
     this.players.forEach((item, i) => {
@@ -351,7 +365,8 @@ const Game = {
       this.playIa()
     }
     //timeout giocatore
-    this.timeoutPlayer()
+    //this.timeoutPlayer()
+
     this.getCardsOnTableLoop()
   }
 }
