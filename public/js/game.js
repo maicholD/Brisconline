@@ -304,13 +304,13 @@ const Game = {
           <button :disabled="cardSelected.value!='null' || myTurn==false || this.cards_in_hand[2].value=='retro' " class="card3btn" v-on:click="play(3)">
           <img class="card3img" :src=" this.cards_in_hand[2].value != 'retro' ? '/img/cards/'+ this.cards_in_hand[2].value + this.cards_in_hand[2].seed + '.png'  : this.retroCard"></button>
         </div>
-          <p class ="timer"> Timer. {{10-this.timer}}</p>
+          <p class ="timer"> Timer. {{19-this.timer}}</p>
         <chat class="chatGame"  v-if="(this.players.length==2)" v-bind:roomId="this.roomId" v-bind:icon="this.players[this.players.findIndex(p=> p.user_name == this.username)].user_img" v-bind:username ="this.username" v-bind:isGlobal="false" ></chat>
     </div>
   </div>
     `,
      watch: {
-       'timer': function(){console.log("TIMER:"+this.timer)},
+       'timer': function(){},
        'played': function(){
          if(this.played)
          {
@@ -326,7 +326,7 @@ const Game = {
          {
            var t2 = setInterval(()=>{
              if(!this.played) {
-               if(this.timer >= 10)
+               if(this.timer >= 18)
                //lancio timeout
                {
                  clearInterval(timerCount)
