@@ -4,14 +4,7 @@
   min-height: 100vh;
   flex-wrap: wrap;
 }
-.timer{
-  background-color: white;
-  height: 20px;
-}
-.deckSize{
-  background-color: white;
-  height: 20px;
-}
+
 .game-table {
   display: flex;
   flex-wrap: wrap;
@@ -60,6 +53,7 @@
   justify-content: center;
   width: 80%;
   height: 30%;
+  position: relative;
 }
 
 .player-2 {
@@ -118,6 +112,12 @@
   border: 4px;
   border-radius: 7%;
   border-style: inherit;
+}
+
+#mazzo {
+  height: 80%;
+  z-index: 3;
+  position: relative;
 }
 
 .giocata1 {
@@ -286,4 +286,42 @@
 
 .progress {
   background-color: transparent;
+}
+
+#mazzo img {
+  height: 100%;
+}
+
+#mazzo .deckSize {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  background: rgba(0, 0, 0, .6);
+  color: #FFF;
+  text-align: right;
+  padding-top: 10%;
+  border-radius: 4px;
+}
+
+#timer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#timer label {
+  text-align: center;
+  font-size: 40px;
+  height: 65px;
+  width: 65px;
+  color: white;
+  background: rgba(0, 0, 0, .5);
+  border-radius: 7px;
+  z-index: 4;
 }

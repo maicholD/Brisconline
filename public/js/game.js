@@ -41,13 +41,10 @@ const Game = {
           clearInterval(t)
           axios.post("/api/game/ia/sendCardIa",null,{params:{roomId: this.roomId}}).
           then(response=>{
-            setTimeout(()=>g
-            {
+            setTimeout(()=> {
               this.myTurn = (response.data.player == this.username)
-              if((response.data.endTurn && !this.myTurn) )
-              {
-                     setTimeout(()=>
-                     {
+              if((response.data.endTurn && !this.myTurn) ) {
+                     setTimeout(()=> {
                         axios.post("/api/game/ia/clearTable",null,{params:{roomId: this.roomId}})
                         .then(result => {
                                axios.post("/api/game/EndTurn",null,{params:{username:response.data.player,roomId: this.roomId,retro:this.retroCard}})
@@ -58,9 +55,9 @@ const Game = {
               },1000)
         })}
       },2000)
-          if(this.endGame){
-            clearInterval(t)
-          }
+      if(this.endGame){
+        clearInterval(t)
+      }
     },
     initIa(iaInfo){
       axios.post("/api/game/addIa",null,{params:{ia:iaInfo,roomId: this.roomId}}).
@@ -282,9 +279,14 @@ const Game = {
           <button class="leaveButton" @click="leave"><img id="leaveImg" src="/img/uscitaW.png" alt="Leave game"> </button>
         </div>
 
+
+
         <div id="deck-div">
-          <p v-if="this.deckSize > 0 " class ="deckSize"> {{this.deckSize}}/40</p>
-          <img v-if="deckVisible" class="deck" :src="this.retroCard"></img>
+          <div id="timer" v-if="this.timer > 0" > <label> {{19-this.timer}} </label> </div>
+          <div id="mazzo">
+            <img v-if="deckVisible" class="deck" :src="this.retroCard"></img>
+            <div v-if="this.deckSize > 0 " class ="deckSize"><label>{{this.deckSize}}/40</label></div>
+          </div>
           <img v-if="briscola != 'null'" class="briscola" :src=" '/img/cards/'+ this.briscola.value + this.briscola.seed + '.png' "></img>
           <img v-if="cardSelected.value != 'null'" class="giocata1" :src=" '/img/cards/'+ this.cardSelected.value + this.cardSelected.seed + '.png' "></img>
           <img v-if="cardPlayer2.value != 'null'" class="giocata2" :src=" '/img/cards/'+ this.cardPlayer2.value + this.cardPlayer2.seed + '.png' "></img>
@@ -309,7 +311,6 @@ const Game = {
           <button :disabled="cardSelected.value!='null' || myTurn==false || this.cards_in_hand[2].value=='retro' " class="card3btn" v-on:click="play(3)">
           <img class="card3img" :src=" this.cards_in_hand[2].value != 'retro' ? '/img/cards/'+ this.cards_in_hand[2].value + this.cards_in_hand[2].seed + '.png'  : this.retroCard"></button>
         </div>
-          <p v-if="this.timer > 0"  class ="timer"> Timer. {{19-this.timer}}</p>
         <chat class="chatGame"  v-if="(this.players.length==2)" v-bind:roomId="this.roomId" v-bind:icon="this.players[this.players.findIndex(p=> p.user_name == this.username)].user_img" v-bind:username ="this.username" v-bind:isGlobal="false" ></chat>
     </div>
   </div>
