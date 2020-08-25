@@ -38,24 +38,26 @@ const Game = {
         //se non e' il mio turno, faccio tirare una carta all'ia
         if(!this.myTurn )
         {
-
           clearInterval(t)
           axios.post("/api/game/ia/sendCardIa",null,{params:{roomId: this.roomId}}).
           then(response=>{
-            setTimeout(()=>{
+            setTimeout(()=>g
+            {
               this.myTurn = (response.data.player == this.username)
               if((response.data.endTurn && !this.myTurn) )
               {
-                 setTimeout(()=>{
-                  axios.post("/api/game/ia/clearTable",null,{params:{roomId: this.roomId}})
-                  .then(result => {
-                         axios.post("/api/game/EndTurn",null,{params:{username:response.data.player,roomId: this.roomId,retro:this.retroCard}})
-                         .then(result => {})
-                     })
-                   },500)
-            }},1000)
-        })}},2000)
-
+                     setTimeout(()=>
+                     {
+                        axios.post("/api/game/ia/clearTable",null,{params:{roomId: this.roomId}})
+                        .then(result => {
+                               axios.post("/api/game/EndTurn",null,{params:{username:response.data.player,roomId: this.roomId,retro:this.retroCard}})
+                               .then(result => {})
+                           })
+                       },500)
+                }
+              },1000)
+        })}
+      },2000)
           if(this.endGame){
             clearInterval(t)
           }
@@ -163,8 +165,8 @@ const Game = {
          roomId: this.roomId}}
        ).then(result => {
          this.cards_in_hand = result.data});
-         axios.get("/api/game/getCardPlayed/" + this.roomId).then(response => {
 
+         axios.get("/api/game/getCardPlayed/" + this.roomId).then(response => {
           this.deckSize = response.data.deckLength
         if(response.data.deckLength == 0)
         {
@@ -312,7 +314,7 @@ const Game = {
     </div>
   </div>
     `,
-     watch: {
+  watch: {
        'timer': function(){},
        'played': function(){
          if(this.played)
@@ -350,7 +352,6 @@ const Game = {
        }
    },
   mounted() {
-
     this.players.forEach((item, i) => {
       if(item.user_name == this.username)
       {
@@ -358,7 +359,6 @@ const Game = {
         this.retroCard = item.user_cardBack
      }
     })
-
     this.getFirstHand()
     //parte ia
     if(this.iaInfo.length != 0 && !this.gameEnded){
@@ -367,9 +367,6 @@ const Game = {
       this.initIa(iaInfo)
       this.playIa()
     }
-    //timeout giocatore
-    //this.timeoutPlayer()
-
     this.getCardsOnTableLoop()
   }
 }

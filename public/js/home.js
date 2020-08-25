@@ -57,11 +57,9 @@ const Home = {
         this.createRoom = false;
       }
     })
-
     this.$root.$on('close', data => {
       this.showModal = false;
     })
-
     this.$root.$on('passwordTent', passInsert => {
       //controllo che le info inserite siano corrette
       axios.post("/api/room/matchPass", null, {

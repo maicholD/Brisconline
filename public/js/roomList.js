@@ -71,10 +71,9 @@ const RoomListTable = {
     //carico  tutte le room
     this.getLobbies()
     this.startRefresh()
-    console.log(this.lobbySel)
+
 
     this.$root.$on('addRoom', data => {
-
       this.doLoop = false
       //entro nella stanza
       router.replace({name: 'Lobby'})

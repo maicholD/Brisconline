@@ -169,7 +169,6 @@ inizio:
     }
   }else
     chosencard={username:doc.cardsOnHand[1].username , card: doc.cardsOnHand[1].cards.splice(0,1)[0]}
-    console.log( doc.cardsOnHand[1].cards)
   return chosencard
 }
 
@@ -273,7 +272,6 @@ function getFirstCardGod(doc){
     cardIndex = getNotSeedP1(doc)
     if(cardIndex == -1){
       //se avversario ha un carico , non butto quel seme
-      console.log("avversario ha "+carico.length +" carichi "+carico.seed)
       if(carico.length>0)
         cardIndex = getNoCaricoP1(doc,carico)
     }

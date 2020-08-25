@@ -31,9 +31,6 @@ const ModalGameEnd = {
         this.userLevel = response.data.user_level
         this.userPoint = parseInt(response.data.user_points)
         this.expPercentage = (this.userPoint/this.maxPoints) * 100
-        console.log(this.expPercentage)
-        /*var elem = document.getElementById("myBar");
-        elem.width = this.expPercentage + '%';*/
       })
       console.log(pointsGained.points)
       if (pointsGained.points > 60)

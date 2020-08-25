@@ -106,7 +106,6 @@ exports.leaveLobby = function(req, res) {
   var lobbyId = req.query.lobbyId
   var playerJoined = req.query.playerJoined
     Lobby.findOneAndUpdate({room_id: lobbyId}, {player_joined: {player: playerJoined}}).then(response => {
-      console.log("update?")
       res.status(200).send({})
     })
 }

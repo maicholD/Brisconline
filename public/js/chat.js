@@ -68,7 +68,6 @@ const Chat = {
     }
   },
   mounted(){
-    console.log('chat: '+ this.username)
     document.getElementsByClassName("Chat")[0].addEventListener('scroll', this.chatScroll)
     var t= setInterval(()=> {
       if(this.isGlobal)
