@@ -2,10 +2,6 @@ html, body {
   overflow: auto;
 }
 
-html {
-  /*background-color: rgba(20, 20, 20, 0.9);*/
-}
-
 body {
   display: flex;
   width: 100vw;

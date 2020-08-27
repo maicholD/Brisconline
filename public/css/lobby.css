@@ -121,7 +121,7 @@
 
 .container-users .userCardImg img {
   width: 100%;
-  height: auto;
+  height: inherit;
 }
 
 .startGamebtn {
@@ -200,4 +200,32 @@
 .imgCustomize:hover .after {
   display: block;
   background: rgba(0, 0, 0, .6);
+}
+
+@media only screen and (max-width: 650px) {
+  #lobby-body .container-users {
+    width: 100%;
+    height: min-content;
+  }
+
+  #lobby-body .container-skin {
+    width: 90%;
+  }
+
+  #lobby-body {
+    justify-content: center;
+  }
+
+  #lobby-body {
+    flex-wrap: wrap;
+  }
+
+  body {
+    overflow-y: visible;
+    background-color: rgba(20, 20, 20, 0.9);
+  }
+
+  #briscol-app {
+    background-color: rgb(0, 0, 0, 0);
+  }
 }

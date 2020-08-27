@@ -186,7 +186,8 @@
 }
 
 .userCardUsername, .userCardLevel, .userCardMail, .userCardPoints, .userCardWin, .userCardLose, .userCardPlayed {
-  font-size: 2.5vh;
+  font-size: 16px;
+  /*2.5vh;*/
   color:
     white;
   background:
@@ -324,4 +325,35 @@
   background: rgba(0, 0, 0, .5);
   border-radius: 7px;
   z-index: 4;
+}
+
+@media only screen and (max-width: 650px) {
+  .player-2, #leaveButtonDiv {
+    height: 20%;
+    margin-bottom: 10%;
+  }
+
+  #deck-div, .EndTurn {
+    height: 25%;
+  }
+
+  .EndTurn img {
+    height: 60%;
+  }
+
+  .game-table {
+    align-content: space-between;
+  }
+
+  .player-hand {
+    align-items: flex-end;
+  }
+
+  .player-hand, .chatGame {
+    height: 28%;
+  }
+
+  #userIngameCardOpponent .userCardImg, #userIngameCardIa .userCardImg, #userIngameCardMe .userCardImg {
+    display: none;
+  }
 }

@@ -1,4 +1,3 @@
-
 const Game = {
   props: ['players','ia'],
   data() {
@@ -50,7 +49,7 @@ const Game = {
                                axios.post("/api/game/EndTurn",null,{params:{username:response.data.player,roomId: this.roomId,retro:this.retroCard}})
                                .then(result => {})
                            })
-                       },500)
+                       },1000)
                 }
               },1000)
         })}
@@ -282,7 +281,7 @@ const Game = {
 
 
         <div id="deck-div">
-          <div id="timer" v-if="this.timer > 0" > <label> {{19-this.timer}} </label> </div>
+          <div id="timer" v-if="this.timer > 0 && !this.gameEnded"  class ="timer"> <label> {{19-this.timer}} </label> </div>
           <div id="mazzo">
             <img v-if="deckVisible" class="deck" :src="this.retroCard"></img>
             <div v-if="this.deckSize > 0 " class ="deckSize"><label>{{this.deckSize}}/40</label></div>
