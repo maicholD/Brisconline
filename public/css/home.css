@@ -5,7 +5,6 @@
   font-weight: bold;
   border-radius: 8px;
   border-color: red;
-  /* align-self: center */
 }
 
 #home-body {
@@ -258,8 +257,6 @@ tr:nth-child(even) {
 }
 
 #room-list-div {
-  /*position: fixed;
-  margin-top: 6%;*/
   overflow: auto;
   max-height: 90%;
   border: black;
@@ -287,8 +284,6 @@ tr:nth-child(even) {
 
 .Chat {
   width: 100%;
-  /*min-height: 25%;
-  max-height: 40%;*/
   align-self: center;
   overflow: auto;
   height: 80%;

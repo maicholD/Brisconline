@@ -53,9 +53,6 @@ div.container {
   border-radius: 8px;
 }
 
-/*#home-body .modal-container * {
-  width: 100%;
-}*/
 .modal-body {
   display: flex;
   flex-wrap: wrap;
