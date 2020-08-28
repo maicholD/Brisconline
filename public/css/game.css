@@ -349,4 +349,13 @@
   #userIngameCardOpponent .userCardImg, #userIngameCardIa .userCardImg, #userIngameCardMe .userCardImg {
     display: none;
   }
+
+  .chatGame {
+    display: none;
+  }
+
+  .player-hand button {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
 }
