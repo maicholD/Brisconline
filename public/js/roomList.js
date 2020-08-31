@@ -33,13 +33,24 @@ const RoomListTable = {
         });
       })
     },
-    activate: function(trIndex) {
-      var selectedRow = this.rowInfo[trIndex]
+    activate: function(trIndex, searched) {
+      var selectedRow = 0;
+      if (searched) {
+        console.log(trIndex)
+
+
+        selectedRow = this.rowInfo.filter(room => room.idRoom == trIndex)[0]
+        console.log(selectedRow)
+      }
+      else
+        selectedRow = this.rowInfo[trIndex]
       var selectJoinedPlayer = selectedRow.playerCount.substring(0, 1)
       var selectMaxPlayer = selectedRow.playerCount.substring(3, 2)
       //se serve la pass allora la richiedo con il modal
-      if (selectJoinedPlayer < selectMaxPlayer)
-          this.$root.$emit('roomDClick',selectedRow)
+      if (selectJoinedPlayer < selectMaxPlayer){
+        this.$root.$emit('roomDClick',selectedRow)
+      }
+
     }
   },
   template: `
@@ -51,13 +62,13 @@ const RoomListTable = {
 				<th>Password Req.</th>
 		  </tr>
 
-			<tr v-if="lobbySel.length==0" class="rowInfo" v-for="(item,index) in rowInfo"  v-on:dblclick="activate(index)">
+			<tr v-if="lobbySel.length==0" class="rowInfo" v-for="(item,index) in rowInfo"  v-on:dblclick="activate(index, false)">
       <td>{{ item.idRoom }}</td>
       <td>{{ item.playerId }}</td>
       <td>{{ item.playerCount }}</td>
       <td>{{ item.passwordReq }}</td>
       </tr>
-      <tr v-if="lobbySel.length !=0" class="rowInfo" v-for="(item,index) in rowInfo.filter(room => room.idRoom == this.lobbySel)"  v-on:dblclick="activate(index)">
+      <tr v-if="lobbySel.length !=0" class="rowInfo" v-for="(item,index) in rowInfo.filter(room => room.idRoom == this.lobbySel)"  v-on:dblclick="activate(lobbySel, true)">
 			 <td>{{ item.idRoom }}</td>
 			 <td>{{ item.playerId }}</td>
 			 <td>{{ item.playerCount }}</td>

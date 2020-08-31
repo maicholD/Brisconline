@@ -28,25 +28,25 @@ const CustomItem = {
        switch(img.split('/')[2])
        {
          case "CardBackground":
-         axios.post("/api/user/updateUserBackground",null,{params:{username: localStorage.username,newObj:img}}).then(data=>{
+         axios.post("/api/user/updateUserBackground",null,{params:{username: localStorage.username,newImage:img}}).then(data=>{
           this.userBackGroundSelected = img
           this.refreshSelected("UserBackground",img)
          })
          break;
          case "table":
-         axios.post("/api/user/updateUserTable",null,{params:{username: localStorage.username,newObj:img}}).then(data=>{
+         axios.post("/api/user/updateUserTable",null,{params:{username: localStorage.username,newImage:img}}).then(data=>{
            this.userTableSelected = img
            this.refreshSelected("Table",img)
         })
          break;
          case "retro":
-         axios.post("/api/user/updateUserCardBack",null,{params:{username: localStorage.username,newObj:img}}).then(data=>{
+         axios.post("/api/user/updateUserCardBack",null,{params:{username: localStorage.username,newImage:img}}).then(data=>{
           this.userRetroSelected = img
           this.refreshSelected("RetroCard",img)
         })
          break;
          case "icon":
-         axios.post("/api/user/updateUserImg",null,{params:{username: localStorage.username,newObj:img}}).then(data=>{
+         axios.post("/api/user/updateUserImg",null,{params:{username: localStorage.username,newImage:img}}).then(data=>{
           this.userIconSelected = img
           this.refreshSelected("Icon",img)
         })

@@ -2,8 +2,8 @@ const Login = {
   data: function() {
     return {
       authError: false,
-      mail: "a@a",
-      pass: "a",
+      mail: "",
+      pass: "",
     }
   },
   template: `

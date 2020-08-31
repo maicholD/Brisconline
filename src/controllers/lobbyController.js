@@ -54,24 +54,24 @@ exports.getLobbyInfo = function(req, res) {
   })
 }
 exports.updateUserBackground = function(req,res){
-  console.log(req.query.newObj);
-  User.findOneAndUpdate({user_name:req.query.username},{ user_background: req.query.newObj},{new:true},(err,doc)=>{
+  console.log(req.query.newImage);
+  User.findOneAndUpdate({user_name:req.query.username},{ user_background: req.query.newImage},{new:true},(err,doc)=>{
     res.status(200).send()
   })
 }
 exports.updateUserTable = function(req,res){
 
-  User.findOneAndUpdate({user_name:req.query.username},{ user_table: req.query.newObj},{new:true},(err,doc)=>{
+  User.findOneAndUpdate({user_name:req.query.username},{ user_table: req.query.newImage},{new:true},(err,doc)=>{
     res.status(200).send()
   })
 }
 exports.updateUserCardBack = function(req,res){
-  User.findOneAndUpdate({user_name:req.query.username},{ user_cardBack: req.query.newObj},{new:true},(err,doc)=>{
+  User.findOneAndUpdate({user_name:req.query.username},{ user_cardBack: req.query.newImage},{new:true},(err,doc)=>{
     res.status(200).send()
   })
 }
 exports.updateUserImg = function(req,res){
-  User.findOneAndUpdate({user_name:req.query.username},{ user_img: req.query.newObj},{new:true},(err,doc)=>{
+  User.findOneAndUpdate({user_name:req.query.username},{ user_img: req.query.newImage},{new:true},(err,doc)=>{
     res.status(200).send()
   })
 }
